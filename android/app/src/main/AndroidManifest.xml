@@ -36,7 +36,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.apptreesoftware.barcodescan.BarcodeScannerActivity"/>
-
+        <activity android:name="io.github.edufolly.fluttermobilevision.barcode.BarcodeCaptureActivity" />
     </application>
 </manifest>
