@@ -37,7 +37,7 @@ class HistoryState extends State<History> {
   }
 
   _initDatabase() async {
-    String path = await initDeleteDb("scan_history.db");
+    String path = await getDatabaseFilePath("scan_history.db");
     Database db = await openReadOnlyDatabase(path);
 
     List<Map> data = await db.query("scan_hisoty", columns: ["text"]);
@@ -93,7 +93,7 @@ class HomePageState extends State<HomePage> {
   }
 
   _insertScanItem(Barcode barcode) async {
-    String path = await initDeleteDb("scan_history.db");
+    String path = await getDatabaseFilePath("scan_history.db");
     Database db = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
       await db.execute(
